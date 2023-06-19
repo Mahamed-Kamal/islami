@@ -144,13 +144,10 @@ class QuranTap extends StatelessWidget {
           child: ListView.separated(
             itemBuilder: (buildContext, index) =>
                 VerseNameWidget(surasNames[index], index),
-            separatorBuilder: (buildContext, index) =>
-                Divider(
-                  color: Theme
-                      .of(context)
-                      .primaryColor,
-                  thickness: 1,
-                ),
+            separatorBuilder: (buildContext, index) => Divider(
+              color: Theme.of(context).primaryColor,
+              thickness: 1,
+            ),
             itemCount: surasNames.length,
           ),)
 
