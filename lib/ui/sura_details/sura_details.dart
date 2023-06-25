@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami/ui/sura_details/verse_content.dart';
 
+import '../my_theme_data/my_theme_data.dart';
+
 class SuraDetails extends StatefulWidget {
   static const String routeName = 'Sura-Details';
 
@@ -22,7 +24,9 @@ class _SuraDetailsState extends State<SuraDetails> {
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-        image: AssetImage('assets/images/main_background.png'),
+        image: AssetImage(MyThemeData.themeMode == ThemeMode.light
+            ? 'assets/images/main_background.png'
+            : 'assets/images/dark_main_background.png'),
         fit: BoxFit.fill,
       )),
       child: Scaffold(
@@ -45,7 +49,7 @@ class _SuraDetailsState extends State<SuraDetails> {
                           VerseContent(chapterContent[index]),
                       separatorBuilder: (buildContext, index) => Divider(
                         thickness: 1,
-                        color: Theme.of(context).primaryColor,
+                        color: Theme.of(context).accentColor,
                       ),
                       itemCount: chapterContent.length,
                     ),
