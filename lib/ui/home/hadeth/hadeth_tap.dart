@@ -39,8 +39,8 @@ class _HadethTapState extends State<HadethTap> {
             child: allHadethList.isEmpty
                 ? Center(child: CircularProgressIndicator())
                 : ListView.separated(
-                    itemBuilder: (context, index) =>
-                        HadethTitleWidget(allHadethList[index].title),
+              itemBuilder: (context, index) =>
+                        HadethTitleWidget(allHadethList[index]),
                     separatorBuilder: (context, index) => Divider(
                       color: Theme.of(context).accentColor,
                       thickness: 1,
