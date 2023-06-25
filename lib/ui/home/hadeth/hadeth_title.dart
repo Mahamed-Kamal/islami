@@ -11,7 +11,8 @@ class HadethTitleWidget extends StatelessWidget {
       onTap: () {},
       child: Container(
         child: Text(title,
-            style: TextStyle(fontSize: 24), textAlign: TextAlign.center),
+            style: Theme.of(context).textTheme.bodyText1,
+            textAlign: TextAlign.center),
       ),
     );
   }

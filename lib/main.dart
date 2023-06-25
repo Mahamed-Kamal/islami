@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami/ui/home/home_screen.dart';
+import 'package:islami/ui/my_theme_data/my_theme_data.dart';
 import 'package:islami/ui/splash/splash_screen.dart';
 import 'package:islami/ui/sura_details/sura_details.dart';
 
@@ -18,29 +19,9 @@ class MyApplication extends StatelessWidget {
         HomeScreen.routeName: (buildContext) => HomeScreen(),
         SuraDetails.routeName: (buildContext) => SuraDetails(),
       },
-      theme: ThemeData(
-        scaffoldBackgroundColor: Colors.transparent,
-        primaryColor: Color(0xFFB7935F),
-        progressIndicatorTheme: ProgressIndicatorThemeData(
-          color: Color(0xFFB7935F),
-        ),
-        bottomNavigationBarTheme: BottomNavigationBarThemeData(
-          selectedItemColor: Colors.black,
-          unselectedItemColor: Colors.white,
-        ),
-        appBarTheme: AppBarTheme(
-          iconTheme: IconThemeData(
-            color: Colors.black,
-          ),
-          color: Colors.transparent,
-          centerTitle: true,
-          elevation: 0,
-          titleTextStyle: TextStyle(
-            fontSize: 30,
-            color: Color(0xFF242424),
-          ),
-        ),
-      ),
+      theme: MyThemeData.lightTheme,
+      darkTheme: MyThemeData.darkTheme,
+      themeMode: MyThemeData.themeMode,
     );
   }
 }

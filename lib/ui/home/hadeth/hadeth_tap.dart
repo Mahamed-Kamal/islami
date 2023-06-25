@@ -23,15 +23,15 @@ class _HadethTapState extends State<HadethTap> {
             flex: 1,
             child: Image.asset('assets/images/hadeth_header_image.png')),
         Divider(
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).accentColor,
           thickness: 2,
         ),
-        Text('Hadeth Number',
-            style: TextStyle(
-              fontSize: 24,
-            )),
+        Text(
+          'Hadeth Number',
+          style: Theme.of(context).textTheme.headline5,
+        ),
         Divider(
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).accentColor,
           thickness: 2,
         ),
         Expanded(
@@ -42,7 +42,7 @@ class _HadethTapState extends State<HadethTap> {
                     itemBuilder: (context, index) =>
                         HadethTitleWidget(allHadethList[index].title),
                     separatorBuilder: (context, index) => Divider(
-                      color: Theme.of(context).primaryColor,
+                      color: Theme.of(context).accentColor,
                       thickness: 1,
                     ),
                     itemCount: allHadethList.length,

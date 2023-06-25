@@ -124,19 +124,14 @@ class QuranTap extends StatelessWidget {
     return Column(
       children: [
         Expanded(
-            flex: 1,
-            child: Image.asset('assets/images/quran_header_logo.png')),
+            flex: 1, child: Image.asset('assets/images/quran_header_logo.png')),
         Divider(
-          color: Theme
-              .of(context)
-              .primaryColor,
+          color: Theme.of(context).accentColor,
           thickness: 2,
         ),
-        Text('VerseName', style: TextStyle(fontSize: 24)),
+        Text('VerseName', style: Theme.of(context).textTheme.headline5),
         Divider(
-          color: Theme
-              .of(context)
-              .primaryColor,
+          color: Theme.of(context).accentColor,
           thickness: 2,
         ),
         Expanded(
@@ -145,7 +140,7 @@ class QuranTap extends StatelessWidget {
             itemBuilder: (buildContext, index) =>
                 VerseNameWidget(surasNames[index], index),
             separatorBuilder: (buildContext, index) => Divider(
-              color: Theme.of(context).primaryColor,
+              color: Theme.of(context).accentColor,
               thickness: 1,
             ),
             itemCount: surasNames.length,
