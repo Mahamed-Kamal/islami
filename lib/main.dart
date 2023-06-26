@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:islami/ui/hadeth_details/hadeth_details.dart';
 import 'package:islami/ui/home/home_screen.dart';
 import 'package:islami/ui/my_theme_data/my_theme_data.dart';
 import 'package:islami/ui/splash/splash_screen.dart';
 import 'package:islami/ui/sura_details/sura_details.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   runApp(MyApplication());
@@ -36,7 +36,7 @@ class MyApplication extends StatelessWidget {
         Locale('en'), // English
         Locale('ar'), // arabic
       ],
-      locale: Locale('ar'),
+      locale: Locale('en'),
     );
   }
 }
