@@ -50,6 +50,15 @@ class MyThemeData {
         fontSize: 20,
       ),
     ),
+    bottomSheetTheme: const BottomSheetThemeData(
+      backgroundColor: Colors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topRight: Radius.circular(12),
+          topLeft: Radius.circular(12),
+        ),
+      ),
+    ),
   );
   static var darkTheme = ThemeData(
     cardColor: darkPrimaryColor,
@@ -85,17 +94,24 @@ class MyThemeData {
         // sub headers
         color: darkMainTextColor,
         fontSize: 24,
+        ),
+        bodyText1: TextStyle(
+          color: darkMainTextColor,
+          fontSize: 24,
+        ),
+        bodyText2: TextStyle(
+          color: darkMainTextColor,
+          fontSize: 20,
+        ),
       ),
-      bodyText1: TextStyle(
-        color: darkMainTextColor,
-        fontSize: 24,
-      ),
-      bodyText2: TextStyle(
-        color: darkMainTextColor,
-        fontSize: 20,
-      ),
-    ),
-  );
+      bottomSheetTheme: const BottomSheetThemeData(
+        backgroundColor: darkPrimaryColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topRight: Radius.circular(12),
+            topLeft: Radius.circular(12),
+          ),
+        ),
+      ));
 
-  static ThemeMode themeMode = ThemeMode.light;
 }
