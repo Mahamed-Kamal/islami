@@ -1,0 +1,9 @@
+flutter_native_splash:
+  background_image: "assets/images/ic_splash.png"
+  image: assets/images/ic_splash.png
+  #branding: assets/dart.png
+
+  android_12:
+    image: assets/images/ic_splash.png
+    color: "#202020"
+  #branding: assets/dart.png
