@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:islami/app_color.dart';
 import 'package:islami/ui/home/home_screen.dart';
 
-import 'onboarding_screen.dart';
+import 'ui/onboarding_screen/onboarding_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,6 +15,34 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.dark,
+      theme: ThemeData(
+        scaffoldBackgroundColor: Colors.transparent,
+        textTheme: TextTheme(
+          bodySmall: TextStyle(
+            fontSize: 14,
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+          bodyMedium: TextStyle(
+            fontSize: 16,
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+          bodyLarge: TextStyle(
+            fontSize: 20,
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          backgroundColor: AppColor.primaryGold,
+          selectedIconTheme: IconThemeData(color: Colors.white),
+          unselectedIconTheme: IconThemeData(color: Colors.black),
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.black,
+        ),
+      ),
       initialRoute: OnBoardingScreen.routeName,
       routes: {
         OnBoardingScreen.routeName: (context) => OnBoardingScreen(),
