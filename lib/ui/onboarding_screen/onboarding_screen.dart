@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:islami/ui/home/home_screen.dart';
-import 'app_color.dart';
+
+import '../../app_color.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   static const String routeName = "/";
