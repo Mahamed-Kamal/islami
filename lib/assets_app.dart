@@ -19,4 +19,7 @@ class AppAssets {
   // quran tap
   static const String suraNumber = "assets/images/sura_number.png";
   static const String suraCard = "assets/images/sura_card.png";
+  static const String SuraDetailsCornorLeft = "assets/images/cornor_left.png";
+  static const String SuraDetailsCornorRight = "assets/images/cornor_right.png";
+  static const String SuraDetailsBottomLogo = "assets/images/logo_bottom.png";
 }
