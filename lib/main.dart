@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:islami/app_color.dart';
+import 'package:islami/cache/cache_helper.dart';
 import 'package:islami/ui/home/home_screen.dart';
+import 'package:islami/ui/sura_details/sura_details_screen.dart';
 
 import 'ui/onboarding_screen/onboarding_screen.dart';
 
-void main() {
-  runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await CacheHelper.init();
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -43,10 +47,14 @@ class MyApp extends StatelessWidget {
           unselectedItemColor: Colors.black,
         ),
       ),
-      initialRoute: OnBoardingScreen.routeName,
+      initialRoute:
+          CacheHelper.getEligibility() == true
+              ? HomeScreen.routeName
+              : OnBoardingScreen.routeName,
       routes: {
         OnBoardingScreen.routeName: (context) => OnBoardingScreen(),
         HomeScreen.routeName: (context) => HomeScreen(),
+        SuraDetailsScreen.routeName: (context) => SuraDetailsScreen(),
       },
     );
   }

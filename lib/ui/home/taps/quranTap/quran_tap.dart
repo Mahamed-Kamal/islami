@@ -3,6 +3,7 @@ import 'package:islami/app_color.dart';
 import 'package:islami/assets_app.dart';
 import 'package:islami/ui/models/sura_model.dart';
 
+import '../../../sura_details/sura_details_screen.dart';
 import 'card_item.dart';
 import 'sura_name_item.dart';
 
@@ -90,14 +91,23 @@ class _QuranTapState extends State<QuranTap> {
                 separatorBuilder: (context, index) => SizedBox(width: 12),
                 itemBuilder:
                     (context, index) =>
-                        CardItem(model: SuraModel.getSuraModel(index)),
+                        InkWell(
+                            onTap: () {
+                              Navigator.pushNamed(
+
+                                  context,
+                                  SuraDetailsScreen.routeName,
+                                  arguments: SuraModel.getSuraModel(index));
+                            },
+
+                            child: CardItem(
+                                model: SuraModel.getSuraModel(index))),
                 itemCount: SuraModel.listCounts,
               ),
             ),
       ],
     );
   }
-
   Widget _suraNameVerticalList() {
     return Expanded(
       child: Column(
@@ -113,11 +123,23 @@ class _QuranTapState extends State<QuranTap> {
                       ? SuraModel.searchResult.length
                       : SuraModel.listCounts,
               itemBuilder:
-                  (context, index) => SuraNameItem(
-                    model:
-                        SuraModel.searchResult.isNotEmpty
-                            ? SuraModel.getSelectedSuraModel(index)
-                            : SuraModel.getSuraModel(index),
+                  (context, index) =>
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(
+
+                        context,
+                        SuraDetailsScreen.routeName,
+                        arguments: SuraModel.getSuraModel(index),
+                      );
+                    },
+
+                    child: SuraNameItem(
+                      model:
+                      SuraModel.searchResult.isNotEmpty
+                          ? SuraModel.getSelectedSuraModel(index)
+                          : SuraModel.getSuraModel(index),
+                    ),
                   ),
               separatorBuilder:
                   (context, index) =>
@@ -128,7 +150,6 @@ class _QuranTapState extends State<QuranTap> {
       ),
     );
   }
-
   OutlineInputBorder _buildStyle() {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),
