@@ -37,6 +37,7 @@ dependencies:
   introduction_screen: ^3.1.17
   flutter_native_splash: ^2.4.6
   flutter_svg: ^2.1.0
+  shared_preferences: ^2.5.3
 
 dev_dependencies:
   flutter_test:
