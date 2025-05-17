@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:islami/assets_app.dart';
 import 'package:islami/ui/bottom_nav_item.dart';
-import 'package:islami/ui/home/taps/hadith_tap.dart';
+import 'package:islami/ui/home/taps/ahadeth_tap/ahadeth_tap.dart';
 import 'package:islami/ui/home/taps/quranTap/quran_tap.dart';
 import 'package:islami/ui/home/taps/radio_tap.dart';
 import 'package:islami/ui/home/taps/sebha_tap.dart';
@@ -22,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     List<Widget> taps = [
       QuranTap(),
-      HadithTap(),
+      AhadethTap(),
       SebhaTap(),
       RadioTap(),
       TimeTap(),
@@ -37,7 +38,12 @@ class _HomeScreenState extends State<HomeScreen> {
             });
           },
         ),
-        body: taps[selectedIndex],
+        body: Column(
+          children: [
+            Image.asset(AppAssets.logoHeader),
+            Expanded(child: taps[selectedIndex]),
+          ],
+        ),
       ),
     );
   }

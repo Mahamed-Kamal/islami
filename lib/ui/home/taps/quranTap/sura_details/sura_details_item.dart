@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../app_color.dart';
+import 'package:islami/app_color.dart';
 
 class SuraDetailsItem extends StatelessWidget {
   List<String> verses;

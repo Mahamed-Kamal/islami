@@ -22,4 +22,7 @@ class AppAssets {
   static const String SuraDetailsCornorLeft = "assets/images/cornor_left.png";
   static const String SuraDetailsCornorRight = "assets/images/cornor_right.png";
   static const String SuraDetailsBottomLogo = "assets/images/logo_bottom.png";
+
+  // Hadeth tap
+  static const String hadethImage = "assets/images/hadeth_image.png";
 }

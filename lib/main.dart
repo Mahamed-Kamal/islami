@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:islami/app_color.dart';
 import 'package:islami/cache/cache_helper.dart';
 import 'package:islami/ui/home/home_screen.dart';
-import 'package:islami/ui/sura_details/sura_details_screen.dart';
 
+import 'ui/home/taps/ahadeth_tap/hadeth_details.dart';
+import 'ui/home/taps/quranTap/sura_details/sura_details_screen.dart';
 import 'ui/onboarding_screen/onboarding_screen.dart';
 
 void main() async {
@@ -21,6 +22,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.dark,
       theme: ThemeData(
+        appBarTheme: AppBarTheme(
+          color: Colors.black,
+          centerTitle: true,
+          iconTheme: IconThemeData(color: AppColor.primaryGold),
+        ),
         scaffoldBackgroundColor: Colors.transparent,
         textTheme: TextTheme(
           bodySmall: TextStyle(
@@ -55,6 +61,7 @@ class MyApp extends StatelessWidget {
         OnBoardingScreen.routeName: (context) => OnBoardingScreen(),
         HomeScreen.routeName: (context) => HomeScreen(),
         SuraDetailsScreen.routeName: (context) => SuraDetailsScreen(),
+        HadethDetails.routeName: (context) => HadethDetails(),
       },
     );
   }

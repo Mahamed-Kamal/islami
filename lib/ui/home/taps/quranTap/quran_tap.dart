@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:islami/app_color.dart';
-import 'package:islami/assets_app.dart';
 import 'package:islami/ui/models/sura_model.dart';
 
-import '../../../sura_details/sura_details_screen.dart';
 import 'card_item.dart';
+import 'sura_details/sura_details_screen.dart';
 import 'sura_name_item.dart';
 
 class QuranTap extends StatefulWidget {
@@ -49,7 +48,6 @@ class _QuranTapState extends State<QuranTap> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Image.asset(AppAssets.logoHeader),
             TextField(
               cursorColor: Colors.white,
               controller: searchController,
