@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:islami/cache/cache_helper.dart';
 import 'package:islami/ui/home/home_screen.dart';
-
-import '../../app_color.dart';
+import 'app_color.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   static const String routeName = "/";
@@ -50,7 +48,6 @@ class OnBoardingScreen extends StatelessWidget {
       showDoneButton: true,
       done: Text("Finish", style: bottomStyle),
       onDone: () {
-        CacheHelper.saveEligibility();
         Navigator.pushReplacementNamed(context, HomeScreen.routeName);
       },
       next: Text("Next", style: bottomStyle),
