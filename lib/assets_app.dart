@@ -25,4 +25,8 @@ class AppAssets {
 
   // Hadeth tap
   static const String hadethImage = "assets/images/hadeth_image.png";
+
+  // Sebha Tap
+  static const String sebhaBody = "assets/images/sebha_body.png";
+  static const String sebhaHeader = "assets/images/sebha_head.png";
 }

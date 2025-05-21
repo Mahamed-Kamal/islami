@@ -52,6 +52,7 @@ class MyApp extends StatelessWidget {
           selectedItemColor: Colors.white,
           unselectedItemColor: Colors.black,
         ),
+        useMaterial3: true,
       ),
       initialRoute:
           CacheHelper.getEligibility() == true
