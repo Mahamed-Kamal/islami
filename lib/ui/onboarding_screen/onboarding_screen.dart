@@ -40,57 +40,59 @@ class OnBoardingScreen extends StatelessWidget {
       imageFlex: 3,
       imagePadding: EdgeInsets.zero,
     );
-    return IntroductionScreen(
-      globalHeader: Image.asset("assets/images/onboarding_header.png"),
-      dotsFlex: 2,
-      dotsDecorator: DotsDecorator(
-        color: Color(0xFF707070),
-        activeColor: AppColor.primaryGold,
+    return SafeArea(
+      child: IntroductionScreen(
+        globalHeader: Image.asset("assets/images/onboarding_header.png"),
+        dotsFlex: 2,
+        dotsDecorator: DotsDecorator(
+          color: Color(0xFF707070),
+          activeColor: AppColor.primaryGold,
+        ),
+        showDoneButton: true,
+        done: Text("Finish", style: bottomStyle),
+        onDone: () {
+          CacheHelper.saveEligibility();
+          Navigator.pushReplacementNamed(context, HomeScreen.routeName);
+        },
+        next: Text("Next", style: bottomStyle),
+        showNextButton: true,
+        back: Text("Back", style: bottomStyle),
+        showBackButton: true,
+        globalBackgroundColor: Color(0xFF202020),
+        pages: [
+          PageViewModel(
+            title: "Welcome To Islami App",
+            image: _buildImage("onboarding1.png"),
+            body: "",
+            decoration: pageDecoration,
+          ),
+          PageViewModel(
+            title: "Welcome To Islami",
+            image: _buildImage("onboarding2.png"),
+            body: "We Are Very Excited To Have You In Our Community",
+            decoration: pageDecoration,
+          ),
+          PageViewModel(
+            title: "Reading the Quran",
+            image: _buildImage("onboarding3.png"),
+            body: "Read, and your Lord is the Most Generous",
+            decoration: pageDecoration,
+          ),
+          PageViewModel(
+            title: "Bearish",
+            image: _buildImage("onboarding4.png"),
+            body: "Praise the name of your Lord, the Most High",
+            decoration: pageDecoration,
+          ),
+          PageViewModel(
+            title: "Holy Quran Radio",
+            image: _buildImage("onboarding5.png"),
+            body:
+                "You can listen to the Holy Quran Radio through the application for free and easily",
+            decoration: pageDecoration,
+          ),
+        ],
       ),
-      showDoneButton: true,
-      done: Text("Finish", style: bottomStyle),
-      onDone: () {
-        CacheHelper.saveEligibility();
-        Navigator.pushReplacementNamed(context, HomeScreen.routeName);
-      },
-      next: Text("Next", style: bottomStyle),
-      showNextButton: true,
-      back: Text("Back", style: bottomStyle),
-      showBackButton: true,
-      globalBackgroundColor: Color(0xFF202020),
-      pages: [
-        PageViewModel(
-          title: "Welcome To Islami App",
-          image: _buildImage("onboarding1.png"),
-          body: "",
-          decoration: pageDecoration,
-        ),
-        PageViewModel(
-          title: "Welcome To Islami",
-          image: _buildImage("onboarding2.png"),
-          body: "We Are Very Excited To Have You In Our Community",
-          decoration: pageDecoration,
-        ),
-        PageViewModel(
-          title: "Reading the Quran",
-          image: _buildImage("onboarding3.png"),
-          body: "Read, and your Lord is the Most Generous",
-          decoration: pageDecoration,
-        ),
-        PageViewModel(
-          title: "Bearish",
-          image: _buildImage("onboarding4.png"),
-          body: "Praise the name of your Lord, the Most High",
-          decoration: pageDecoration,
-        ),
-        PageViewModel(
-          title: "Holy Quran Radio",
-          image: _buildImage("onboarding5.png"),
-          body:
-              "You can listen to the Holy Quran Radio through the application for free and easily",
-          decoration: pageDecoration,
-        ),
-      ],
     );
   }
 }
